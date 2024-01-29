@@ -72,4 +72,36 @@ class StudentRepositoryTest {
         List<Student> studentList = studentRepository.findByGuardianName("Guard2 Guardian");
         System.out.println(studentList);
     }
+
+    @Test
+    public void printStudentByEmailAddress() {
+        Student student = studentRepository.getStudentByEmailAddress("stud2@gmail.com");
+        System.out.println("student: " + student);
+    }
+
+    @Test
+    public void printStudentFirstNameByEmailAddress() {
+        String firstname = studentRepository.getStudentFirstNameByEmailAddress("stud2@gmail.com");
+        System.out.println("student first name: " + firstname);
+    }
+
+    @Test
+    public void printStudentByEmailAddressNative() {
+        Student student = studentRepository.getStudentByEmailAddressNative("stud2@gmail.com");
+        System.out.println("student: " + student);
+    }
+
+    @Test
+    public void printStudentByEmailAddressNativeNamedParam() {
+        Student student = studentRepository.getStudentByEmailAddressNativeNamedParam("stud2@gmail.com");
+        System.out.println("student: " + student);
+    }
+
+    @Test
+    public void updateStudentNameByEmailId() {
+        studentRepository.updateStudentNameByEmailId(
+                "Strud1",
+                "stud1@gmail.com"
+        );
+    }
 }
